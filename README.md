@@ -99,6 +99,40 @@ Dandonos $28.88$ unidades
 
 ### 🔗 Planeación RRT
 
+Para la planeación de la ruta usando el algoritmo RRT (Rapidly Random Tree), se utilizó la función planner de Matlab, y se configuró de la siguiente manera:
+```matlab
+bounds = [mapa.XWorldLimits; mapa.YWorldLimits; [-pi pi]];
+ss = stateSpaceDubins(bounds);
+ss.MinTurningRadius = 0.5;
+```
+De acuerdo a las dimensiones del robot se asigna un valor de radio de giro de 50 cm, y se toman los límites del mapa como referencia
+Para la configuración del planeador se progrmaron los siguientes valores:
+```matlab
+stateValidator = validatorOccupancyMap(ss); 
+stateValidator.Map = mapaInflado;
+stateValidator.ValidationDistance = 0.4;
+planner = plannerRRT(ss,stateValidator);
+planner.MaxConnectionDistance = 1;
+planner.MaxIterations = 2000;
+```
+Se asigna un valor de 40 cm a la distancoa de validación y 1 metro a la máxima distancia de conexión entre puntos, el mapa de referencia es nuestro mapa inflado y los límites anteriormente programados, con 2.000 iteraciones es suficiente para que encuentre la ruta del origen al punto objetivo.
+Las trayectorias realizadas se muestran en la siguiente imagen:
+
+<div align="center">
+  ![image](https://github.com/user-attachments/assets/1b410a61-c245-4931-ac06-28df93379c30)
+</div>
+
+Procedemos con la interpolación de los nodos para encontrar la ruta óptima
+
+``` matlab
+interpolate(pthObj, 300)
+```
+La ruta obtenida es la siguiente:
+<div align="center">
+  ![image](https://github.com/user-attachments/assets/3fa28415-5971-465b-a15f-e8d45e47a4db)
+</div>
+
+
 ### ⚙️ Simulación en CoppeliaSim
 
 Para la simulación, se siguieron los pasos descritos en la guia y se obtuvo la escena [tarea_navegacion.ttt](tarea_navegacion.ttt)
