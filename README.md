@@ -119,7 +119,7 @@ Se asigna un valor de 40 cm a la distancoa de validación y 1 metro a la máxima
 Las trayectorias realizadas se muestran en la siguiente imagen:
 
 <div align="center">
-  ![image](https://github.com/user-attachments/assets/b1738b95-2708-461e-9544-22c9ab0c2092)
+  <img src=https://github.com/user-attachments/assets/b1738b95-2708-461e-9544-22c9ab0c2092>
 </div>
 
 Procedemos con la interpolación de los nodos para encontrar la ruta óptima
@@ -129,7 +129,7 @@ interpolate(pthObj, 300)
 ```
 La ruta obtenida es la siguiente:
 <div align="center">
-  ![image](https://github.com/user-attachments/assets/6b2e1e24-eeb9-4287-8415-de4c4b18bbbb)
+  <img src=https://github.com/user-attachments/assets/6b2e1e24-eeb9-4287-8415-de4c4b18bbbb>
 </div>
 
 
