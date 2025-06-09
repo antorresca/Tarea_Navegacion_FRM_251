@@ -10,6 +10,12 @@ Con lo cual, cada rueda puede girar a una velocidad diferente ($\phi_1,\phi_2,\p
 
 *Nota: La rueda esferica se colocó simplemente para mantener la condición de estabilidad.*
 
+El robot asigando es
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dbb591f7-67b8-4d72-ad7f-67075c5ce733">
+</div>
+
+
 Tomando esto, el robot *Summit XL* de *Robornik* puede actuar como un robot diferencial y se pueden emplear lo siguiente:
 
 $$ \begin{bmatrix}
