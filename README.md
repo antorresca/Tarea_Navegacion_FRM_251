@@ -110,6 +110,12 @@ El algoritmo PRM usa la función de costo de distancia, al realizar el cálculo 
 
 $$\text{Longitud total} = \sum_{i=1}^{N-1} \sqrt{ \sum_{j=1}^{d} \left( x_{i+1,j} - x_{i,j} \right)^2 }$$
 
+Donde
+* $x_{i,j}$ es la coordenada *j-ésima* del punto *𝑖* del camino.
+* $N$ es el número total de puntos.
+* $d$ es la dimensión (2 para 2D, 3 para 3D).
+* $∑(Δ𝑥)^2$ es la distancia euclidiana entre dos puntos consecutivos.
+
 Dandonos $28.88$ metros.
 
 ### 🔗 Planeación RRT
