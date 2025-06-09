@@ -111,6 +111,14 @@ Para la simulación, se siguieron los pasos descritos en la guia y se obtuvo la 
 
 Para realizar la simulacion en MatLab, se empleó el archivo [comunicacion_coppelia.m](comunicacion/comunicacion_coppelia.m) en el cual, el script ubica el robot en la posición inicial, y sigue la trayectoria PRM con el controlador Pure Pursuit y la cinematica desarrollada en la sección [Modelo del robot](#-modelo-del-robot).
 
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/99522c0f-569f-403e-af17-d71b48e3c42d" width="400">
+</div>
 
 ## 🦾 Resultados
+
 ## 📖 Bibliografia
+
+* «controllerPurePursuit - Create controller to follow set of waypoints - MATLAB». Disponible en: https://la.mathworks.com/help/nav/ref/controllerpurepursuit-system-object.html
+* «Probabilistic Roadmaps (PRM) - MATLAB & Simulink». Disponible en: https://la.mathworks.com/help/robotics/ug/probabilistic-roadmaps-prm.html?requestedDomain=
+* «Plan Mobile Robot Paths Using RRT - MATLAB & Simulink». Disponible en: https://www.mathworks.com/help/nav/ug/plan-mobile-robot-paths-using-rrt.html
