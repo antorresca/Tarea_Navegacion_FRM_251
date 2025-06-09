@@ -121,7 +121,8 @@ Las trayectorias realizadas se muestran en la siguiente imagen:
 <div align="center">
   <img src=https://github.com/user-attachments/assets/b1738b95-2708-461e-9544-22c9ab0c2092>
 </div>
-En la tabla [Tabla%puntos%RRT.xlsx](Tabla%puntos%RRT.xlsx) se almacenan los 300 puntos o nodos obtenidos del algoritno de busqueda de la trayectoria.
+
+En la tabla [Tabla puntos RRT.xlsx](Tabla%puntos%RRT.xlsx) se almacenan los 300 puntos o nodos obtenidos del algoritno de busqueda de la trayectoria.
 Procedemos con la interpolación de los nodos para encontrar la ruta óptima
 
 ``` matlab
