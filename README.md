@@ -3,18 +3,27 @@
 * Andres Camilo Torres Cajamarca (antorresca@unal.edu.co)
 * Juan Camilo Gomez Robayo (juagomezro@unal.edu.co)
 ## 🎢 Procedimiento
+
+### Robot asigando 
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dbb591f7-67b8-4d72-ad7f-67075c5ce733" width="400">
+</div>
+
 ### 🤖 Modelo del robot
 Para el modelo cinemático, se tiene que el robot tiene 4 ruedas fijas motorizadas:
 
-Con lo cual, cada rueda puede girar a una velocidad diferente ($\phi_1,\phi_2,\phi_3,\phi_4$), útil para terrenos irregulares; sin embargo, en este caso, el terreno es plano, por ello, se puede simplificar el modelo haciendo que ($\phi_1=\phi_4=\phi_l$ y $\phi_2=\phi_3=\phi_r$) haciendo que el modelo cinematico se simplifique a:
-
-*Nota: La rueda esferica se colocó simplemente para mantener la condición de estabilidad.*
-
-El robot asigando es
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/dbb591f7-67b8-4d72-ad7f-67075c5ce733">
+  <img src="https://github.com/user-attachments/assets/c6d7a804-b02e-4e3d-bd9f-eddef953f2ac" width="400">
 </div>
 
+Con lo cual, cada rueda puede girar a una velocidad diferente ($\phi_1,\phi_2,\phi_3,\phi_4$), útil para terrenos irregulares; sin embargo, en este caso, el terreno es plano, por ello, se puede simplificar el modelo haciendo que ($\phi_1=\phi_4=\phi_l$ y $\phi_2=\phi_3=\phi_r$) haciendo que el modelo cinematico se simplifique a:
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a1009f12-ae63-4995-8720-1b5a8729ff0a" width="400">
+</div>
+
+*Nota: La rueda esferica se colocó simplemente para mantener la condición de estabilidad.*
 
 Tomando esto, el robot *Summit XL* de *Robornik* puede actuar como un robot diferencial y se pueden emplear lo siguiente:
 
@@ -101,7 +110,7 @@ El algoritmo PRM usa la función de costo de distancia, al realizar el cálculo 
 
 $$\text{Longitud total} = \sum_{i=1}^{N-1} \sqrt{ \sum_{j=1}^{d} \left( x_{i+1,j} - x_{i,j} \right)^2 }$$
 
-Dandonos $28.88$ unidades
+Dandonos $28.88$ metros.
 
 ### 🔗 Planeación RRT
 
@@ -125,7 +134,7 @@ Se asigna un valor de 40 cm a la distancoa de validación y 1 metro a la máxima
 Las trayectorias realizadas se muestran en la siguiente imagen:
 
 <div align="center">
-  <img src=https://github.com/user-attachments/assets/b1738b95-2708-461e-9544-22c9ab0c2092>
+  <img src="https://github.com/user-attachments/assets/b1738b95-2708-461e-9544-22c9ab0c2092" width="400">
 </div>
 
 En la tabla [Tabla puntos RRT.xlsx](Tabla_puntos_RRT.xlsx) se almacenan los 300 puntos o nodos obtenidos del algoritno de busqueda de la trayectoria.
@@ -136,8 +145,10 @@ interpolate(pthObj, 300)
 ```
 La ruta obtenida es la siguiente:
 <div align="center">
-  <img src=https://github.com/user-attachments/assets/6b2e1e24-eeb9-4287-8415-de4c4b18bbbb>
+  <img src="https://github.com/user-attachments/assets/6b2e1e24-eeb9-4287-8415-de4c4b18bbbb" width="400">
 </div>
+
+La función de costo, es la misma que la descrita en la sección [Planeación PRM](#-planeación-prm), en este caso dio una sitancia total de $30.53$ metros.
 
 
 ### ⚙️ Simulación en CoppeliaSim
@@ -156,7 +167,11 @@ Para realizar la simulacion en MatLab, se empleó el archivo [comunicacion_coppe
   <video src="https://github.com/user-attachments/assets/99522c0f-569f-403e-af17-d71b48e3c42d" width="400">
 </div>
 
-## 🦾 Resultados
+## 🦾 Conclusiones
+
+En el proceso de planificación de trayectorias utilizando los algoritmos PRM (Probabilistic Roadmap) y RRT (Rapidly-Exploring Random Tree) en MATLAB e implementando su ejecución en CoppeliaSim, se observó que la trayectoria generada por el algoritmo PRM fue la de menor longitud. Aunque PRM produjo una ruta más corta, su tiempo de procesamiento fue mayor en comparación con RRT, con una diferencia de 1.65 metros en distancia total recorrida entre ambas trayectorias. Por otro lado, se identificaron limitaciones relacionadas con la comunicación entre MATLAB y CoppeliaSim, especialmente cuando los cambios en el script de MATLAB se realizan de forma muy rápida o no se cierra adecuadamente la conexión del cliente, lo cual puede derivar en fallos de simulación.
+
+Adicionalmente, se destaca que, dependiendo de su configuración cinemática, algunos robots móviles de cuatro ruedas pueden modelarse de manera simplificada como robots diferenciales de dos ruedas, lo que facilita la planificación y el control del movimiento. Además, es fundamental definir correctamente los parámetros de cada algoritmo, como el número de iteraciones, el radio de conexión o la distancia de validación. Una selección inadecuada puede resultar en tiempos de procesamiento innecesarios, fallos en la convergencia del algoritmo, rutas poco adecuadas e incluso pérdida de datos durante la ejecución de la simulación.
 
 ## 📖 Bibliografia
 
