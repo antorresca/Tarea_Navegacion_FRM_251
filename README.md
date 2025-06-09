@@ -52,16 +52,15 @@ mapPRM.ConnectionDistance = 5; %Distancia de conexión entre nodos
 Con ello, se crea el mapa para hacer la planeación PRM definiendo el mapa, la cantidad de nodos ($250$) y la distancia máxima de conexion entre nodos ($5$m). El mapa que se obtuvo es el siguiente:
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/39292adf-d765-4afe-9995-3088ff5b2755" width="400">
+  <img src="https://github.com/user-attachments/assets/a37a3e08-9360-4cb6-8b6c-5004bfbf22b2" width="400">
 </div>
 
 *Nota: La cantidad de nodos y la distancia entre los mismos se vario iterando y revisando que hubiera una distribución aceptable (todos las zonas conectados al menos por 1 ruta)*
 
 Con este mapa, se realizó el calculo de la ruta teniendo en cuenta el punto de origen ($P_o = (1.5,0)$) y el punto final ($P_f=(17.33,16)$) obteniendo la siguiente ruta:
 
-
 <div align="center">
-<table border="1">
+<table border="1" cellpadding="5" cellspacing="0">
   <thead>
     <tr>
       <th>X</th>
@@ -70,17 +69,17 @@ Con este mapa, se realizó el calculo de la ruta teniendo en cuenta el punto de 
   </thead>
   <tbody>
     <tr><td>1.5</td><td>0</td></tr>
-    <tr><td>1.1039</td><td>0.022894</td></tr>
-    <tr><td>1.6433</td><td>2.8247</td></tr>
-    <tr><td>2.0271</td><td>6.5297</td></tr>
-    <tr><td>3.1938</td><td>9.2027</td></tr>
-    <tr><td>2.9474</td><td>10.026</td></tr>
-    <tr><td>3.8093</td><td>11.285</td></tr>
-    <tr><td>4.3717</td><td>11.613</td></tr>
-    <tr><td>5.7616</td><td>14.657</td></tr>
-    <tr><td>8.7926</td><td>14.847</td></tr>
-    <tr><td>12.536</td><td>14.786</td></tr>
-    <tr><td>17.224</td><td>15.725</td></tr>
+    <tr><td>1.9332</td><td>0.54393</td></tr>
+    <tr><td>2.0276</td><td>2.1989</td></tr>
+    <tr><td>2.1132</td><td>5.636</td></tr>
+    <tr><td>3.051</td><td>8.468</td></tr>
+    <tr><td>3.2082</td><td>11.151</td></tr>
+    <tr><td>5.1399</td><td>12.597</td></tr>
+    <tr><td>5.4115</td><td>15.363</td></tr>
+    <tr><td>6.2514</td><td>15.041</td></tr>
+    <tr><td>10.489</td><td>14.926</td></tr>
+    <tr><td>13.062</td><td>15.17</td></tr>
+    <tr><td>17.066</td><td>15.609</td></tr>
     <tr><td>17.33</td><td>16</td></tr>
   </tbody>
 </table>
@@ -89,17 +88,29 @@ Con este mapa, se realizó el calculo de la ruta teniendo en cuenta el punto de 
 Y el mapa sin inflar con la ruta óptima es 
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/01afa969-e988-4ee1-b471-a403d60f32c2" width="400">
+  <img src="https://github.com/user-attachments/assets/b0133819-ed56-4963-8038-3c23f9150d62" width="400">
 </div>
 
 El algoritmo PRM usa la función de costo de distancia, al realizar el cálculo de la distancia con la siguiente ecuación
 
 $$\text{Longitud total} = \sum_{i=1}^{N-1} \sqrt{ \sum_{j=1}^{d} \left( x_{i+1,j} - x_{i,j} \right)^2 }$$
 
-Dandonos $28.13$ unidades
+Dandonos $28.88$ unidades
 
 ### 🔗 Planeación RRT
+
 ### ⚙️ Simulación en CoppeliaSim
+
+Para la simulación, se siguieron los pasos descritos en la guia y se obtuvo la escena [tarea_navegacion.ttt](tarea_navegacion.ttt)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3938b8fb-7999-40ec-bd53-355292b55f9f" width="400">
+</div>
+
 ### 📡 Simulación MATLAB Y COPPELIASIM
+
+Para realizar la simulacion en MatLab, se empleó el archivo [comunicacion_coppelia.m](comunicacion/comunicacion_coppelia.m) en el cual, el script ubica el robot en la posición inicial, y sigue la trayectoria PRM con el controlador Pure Pursuit y la cinematica desarrollada en la sección [Modelo del robot](#-modelo-del-robot).
+
+
 ## 🦾 Resultados
 ## 📖 Bibliografia
